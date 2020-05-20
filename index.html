@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<title>Password Generator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		body
+		{
+		background-color:black;
+		}
+		.container
+		{
+		background-color:#111;
+		}
+		.col-xs-12
+		{
+		color:white;
+		padding:15px;
+		font-size:22px;
+		font-family:Arial;
+		border-bottom:2px solid orange;
+		}
+		#usr
+		{
+		margin-top:50px;
+		margin-bottom:50px;
+		background-color:#111;
+		color:#F1F1F1;
+		border-top:none;
+		border-left:none;
+		border-right:none;
+		border-bottom:2px solid orange;
+		text-align:center;
+		font-size:22px;
+		}
+		#btn
+		{
+		border:2px solid orange;
+		padding:5px;
+		background-color:#111;
+		color:white;
+		font-family:Arial;
+		font-size:22px;
+		}
+		p
+		{
+		color:white;
+		font-size:16px;
+		font-family:Arial;
+		margin-top:50px;
+		}
+		a
+		{
+		color:rgb(200,200,200);
+		font-size: 16px;
+		font-family:Arial;
+		text-decoration:none;
+		}
+		a:visited
+		{
+		color:white;
+		font-size: 16px;
+		font-family:Arial;
+		text-decoration:none;
+		}
+		</style>
+		<script>
+		function generatePass(){
+			document.getElementById("usr").value='';
+			let n=15;
+			n=document.getElementById("range").value;
+			let pass=[];
+			for (let i=0; i<n; i++){
+				let x=Math.floor(Math.random()*66)+1;
+				switch(x)
+				{
+					case 1: pass[i]='a';break;
+					case 2: pass[i]='b';break;
+					case 3: pass[i]='c';break;
+					case 4: pass[i]='d';break;
+					case 5: pass[i]='e';break;
+					case 6: pass[i]='f';break;
+					case 7: pass[i]='g';break;
+					case 8: pass[i]='h';break;
+					case 9: pass[i]='i';break;
+					case 10: pass[i]='j';break;
+					case 11: pass[i]='k';break;
+					case 12: pass[i]='l';break;
+					case 13: pass[i]='m';break;
+					case 14: pass[i]='n';break;
+					case 15: pass[i]='o';break;
+					case 16: pass[i]='p';break;
+					case 17: pass[i]='q';break;
+					case 18: pass[i]='r';break;
+					case 19: pass[i]='s';break;
+					case 20: pass[i]='t';break;
+					case 21: pass[i]='u';break;
+					case 22: pass[i]='v';break;
+					case 23: pass[i]='w';break;
+					case 24: pass[i]='x';break;
+					case 25: pass[i]='y';break;
+					case 26: pass[i]='z';break;
+					case 27: pass[i]='1';break;
+					case 28: pass[i]='2';break;
+					case 29: pass[i]='3';break;
+					case 30: pass[i]='4';break;
+					case 31: pass[i]='5';break;
+					case 32: pass[i]='6';break;
+					case 33: pass[i]='7';break;
+					case 34: pass[i]='8';break;
+					case 35: pass[i]='9';break;
+					case 36: pass[i]='0';break;
+					case 37: pass[i]='!';break;
+					case 38: pass[i]='%';break;
+					case 39: pass[i]='$';break;
+					case 40: pass[i]='/';break;
+					case 41: pass[i]='A';break;
+					case 42: pass[i]='B';break;
+					case 43: pass[i]='C';break;
+					case 44: pass[i]='D';break;
+					case 45: pass[i]='E';break;
+					case 46: pass[i]='F';break;
+					case 47: pass[i]='G';break;
+					case 48: pass[i]='H';break;
+					case 49: pass[i]='I';break;
+					case 50: pass[i]='J';break;
+					case 51: pass[i]='K';break;
+					case 52: pass[i]='L';break;
+					case 53: pass[i]='M';break;
+					case 54: pass[i]='N';break;
+					case 55: pass[i]='O';break;
+					case 56: pass[i]='P';break;
+					case 57: pass[i]='Q';break;
+					case 58: pass[i]='R';break;
+					case 59: pass[i]='S';break;
+					case 60: pass[i]='T';break;
+					case 61: pass[i]='U';break;
+					case 62: pass[i]='V';break;
+					case 63: pass[i]='W';break;
+					case 64: pass[i]='X';break;
+					case 65: pass[i]='Y';break;
+					case 66: pass[i]='Z';break;
+					default: pass[i]='#';break;
+				}
+				
+			}
+			
+			pass=pass.join('');
+			document.getElementById("usr").value=pass;
+		}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">Password Generator</div>
+			</div>
+			<div class="text-center">
+				<p>Choose password length (15-25):</p>
+				<input id="range"type="range" min="15" max="25" value="15">
+				<input onkeydown="return false" type="text" class="form-control" id="usr">
+				<button id="btn" onclick="generatePass()">Generate</button>
+			</div>
+		<p class="text-center">Created by <a href="https://www.instagram.com/v_loncarr/" target="-blank">@v_loncarr</a></p>
+		</div>
+		
+	</body>
+</html>
